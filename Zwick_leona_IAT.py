@@ -12,7 +12,7 @@ IAT_data.write("\t".join(["critical trial nr", "con/incon", "vpn response", "cor
 
 my_win = Window([1000,600], color='black', units='pix') 
 introduction = TextStim(my_win, height=25, color='white') 
-introduction.setText("Welcome!\n\nIn this study you will complete an Implicit association test (IAT)\n\nYou will be asked to sort words shown at the bottom of the screen into groups as fast as you can by pressing 'f' and 'k'\n\nIf you press the wrong key, correct your answer by pressing the wright one \n\nThis study will take about 2 min\n\nPress 'SPACE' to start!")
+introduction.setText("Welcome!\n\nIn this study you will complete an Implicit association test (IAT)\n\nYou will be asked to sort words shown at the bottom of the screen into groups as fast as you can by pressing 'f' and 'k'\n\nIf you press the wrong key, correct your answer by pressing the right one \n\nThis study will take about 2 min\n\nPress 'SPACE' to start!")
 introduction.draw() 
 my_win.flip() 
 waitKeys( keyList=["space"]) 
@@ -20,7 +20,6 @@ answer_keys = [["f"],["k"]]
 answer_keys_joined = list(itertools.chain(*answer_keys))
 timer = Clock()
 t_counter = 0
-s_counter = 0
 
 #Round 1
 round_1 = TextStim(my_win, height=25, color='white')
@@ -47,9 +46,9 @@ while len(stimuli) != len(new_list):
         new_list.append(random_word) 
         cat_1.draw()
         cat_2.draw()
-        random_car = TextStim(my_win, height=45, pos=[0,-140], color='white')
-        random_car.setText(random_word)
-        random_car.draw()
+        random_stim = TextStim(my_win, height=45, pos=[0,-140], color='white')
+        random_stim.setText(random_word)
+        random_stim.draw()
         my_win.flip()
         pressed_key = waitKeys( keyList = answer_keys_joined)
         if (pressed_key == answer_keys[0]) and (random_word in career): 
@@ -63,14 +62,14 @@ while len(stimuli) != len(new_list):
             cross.draw() 
             cat_1.draw() 
             cat_2.draw()
-            random_car.draw()
+            random_stim.draw()
             my_win.flip() 
             if random_word in career: 
                 waitKeys( keyList = ["f"])
                 print("now it is correct")
-            elif random_word in family:
+            elif random_word in family: 
                 waitKeys( keyList = ["k"])
-                print("now it is correct") 
+                print("now it is correct")
 
 #Round 2
 round_2 = TextStim(my_win, height=25, color='white')
@@ -98,9 +97,9 @@ while len(stimuli) != len(new_list):
         new_list.append(random_word) 
         cat_1.draw()
         cat_2.draw()
-        random_car = TextStim(my_win, height=45, pos=[0,-140], color='white')
-        random_car.setText(random_word)
-        random_car.draw()
+        random_stim = TextStim(my_win, height=45, pos=[0,-140], color='white')
+        random_stim.setText(random_word)
+        random_stim.draw()
         my_win.flip()
         pressed_key = waitKeys( keyList = answer_keys_joined)
         if (pressed_key == answer_keys[0]) and (random_word in male): 
@@ -114,7 +113,7 @@ while len(stimuli) != len(new_list):
             cross.draw() 
             cat_1.draw() 
             cat_2.draw()
-            random_car.draw()
+            random_stim.draw()
             my_win.flip() 
             if random_word in male: 
                 waitKeys( keyList = ["f"]) 
@@ -152,9 +151,9 @@ while len(stimuli) != len(new_list):
         new_list.append(random_word) 
         cat_1.draw()
         cat_2.draw()
-        random_car = TextStim(my_win, height=45, pos=[0,-140], color='white')
-        random_car.setText(random_word)
-        random_car.draw()
+        random_stim = TextStim(my_win, height=45, pos=[0,-140], color='white')
+        random_stim.setText(random_word)
+        random_stim.draw()
         my_win.flip()
         pressed_key = waitKeys( keyList = answer_keys_joined)
         if (pressed_key == answer_keys[0]) and (random_word in f_c_joined): 
@@ -172,7 +171,7 @@ while len(stimuli) != len(new_list):
             cross.draw() 
             cat_1.draw() 
             cat_2.draw()
-            random_car.draw()
+            random_stim.draw()
             my_win.flip() 
             if random_word in f_c_joined: 
                 waitKeys( keyList = ["f"])
@@ -214,9 +213,9 @@ while len(stimuli) != len(new_list):
         new_list.append(random_word) 
         cat_1.draw()
         cat_2.draw()
-        random_car = TextStim(my_win, height=45, pos=[0,-140], color='white')
-        random_car.setText(random_word)
-        random_car.draw()
+        random_stim = TextStim(my_win, height=45, pos=[0,-140], color='white')
+        random_stim.setText(random_word)
+        random_stim.draw()
         my_win.flip()
         pressed_key = waitKeys( keyList = answer_keys_joined)
         if (pressed_key == answer_keys[0]) and (random_word in m_c_joined): 
@@ -230,7 +229,7 @@ while len(stimuli) != len(new_list):
             cross.draw() 
             cat_1.draw() 
             cat_2.draw()
-            random_car.draw()
+            random_stim.draw()
             my_win.flip() 
             if random_word in m_c_joined: 
                 waitKeys( keyList = ["f"])
@@ -262,9 +261,9 @@ while len(stimuli) != len(new_list):
         new_list.append(random_word) 
         cat_1.draw()
         cat_2.draw()
-        random_car = TextStim(my_win, height=45, pos=[0,-140], color='white')
-        random_car.setText(random_word)
-        random_car.draw()
+        random_stim = TextStim(my_win, height=45, pos=[0,-140], color='white')
+        random_stim.setText(random_word)
+        random_stim.draw()
         my_win.flip()
         pressed_key = waitKeys( keyList = answer_keys_joined)
         if (pressed_key == answer_keys[0]) and (random_word in m_c_joined): 
@@ -282,7 +281,7 @@ while len(stimuli) != len(new_list):
             cross.draw() 
             cat_1.draw() 
             cat_2.draw()
-            random_car.draw()
+            random_stim.draw()
             my_win.flip() 
             if random_word in m_c_joined: 
                 waitKeys( keyList = ["f"]) 
@@ -297,7 +296,7 @@ while len(stimuli) != len(new_list):
         IAT_data.write("\t\t".join([str(t_counter),"\tcon", str(pressed_key), vpn , str(rt)]) + "\n")
 
 ending = TextStim(my_win, height=35, color='white') 
-ending.setText("Thank you for your participation!\nPress enter to end the programm")
+ending.setText("Thank you for your participation!\nPress enter to end the programm") 
 ending.draw()
 my_win.flip() 
 waitKeys( keyList = ["space"]) 
