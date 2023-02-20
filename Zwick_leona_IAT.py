@@ -301,12 +301,3 @@ ending.draw()
 my_win.flip() 
 waitKeys( keyList = ["space"]) 
 IAT_data.close()
-
-
-# GL:
-# Some things could be more concisely written, but for this relatively complex task it's probably all acceptable as it is.
-# Minor (not optimal, but in your case okay) things:
-# - Should start with random category-attribute sides
-# - IAT should be alternating.
-# - The blocks would ideally be done with a single function.
-# - Other things...
